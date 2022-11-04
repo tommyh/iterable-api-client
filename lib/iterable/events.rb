@@ -39,6 +39,19 @@ module Iterable
       Iterable.request(conf, '/events/track').post(attrs)
     end
 
+    # TODO: Add `bulk_track` to README.md
+    # TODO: Add `bulk_track` to `events_spec.rb`
+    ##
+    #
+    # Bulk track events
+    #
+    # @param events [Array[Hash]] Array of hashes of event details
+    #
+    # @return [Iterable::Response] A response object
+    def bulk_track(events = [])
+      Iterable.request(conf, '/events/trackBulk').post(events: events)
+    end
+
     ##
     #
     # Track an event
